@@ -13,7 +13,7 @@ Amar Ghandi
 
 **Developers:**  
 Jerry  
-Tommy  
+Tommy Phao   
 Jairus  
 Rebecca  
 Rane  
