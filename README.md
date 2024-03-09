@@ -1,20 +1,22 @@
 # Static Site
+
 ## This project is currently in development. It will be used to in Fall 2024 to display info about an upcoming hackathon + info about previous hackathons.
+
 ### Current Developers Working on the project
 
 **Project Manager:**  
-Michael Wu 
+Michael Wu
 
 **Tech Leads:**  
 Daniel  
 Chris J Lo  
 Justin Nguyen  
-Amar Ghandi  
+Amar Ghandi
 
 **Developers:**  
 Jerry  
-Tommy Phao   
+Tommy Phao  
 Jairus  
-Rebecca  
+Rebecca Smith  
 Rane  
-Armin Erika  
+Armin Erika
