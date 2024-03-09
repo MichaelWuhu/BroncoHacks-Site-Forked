@@ -6,7 +6,7 @@
 Michael Wu 
 
 **Tech Leads:**  
-Daniel Pasion  
+Daniel  
 Chris J Lo  
 Justin Nguyen  
 Amar Ghandi  
