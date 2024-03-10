@@ -18,5 +18,5 @@ Jerry
 Tommy Phao  
 Jairus Legion  
 Rebecca Smith  
-Rane  
+Rane Dy  
 Armin Erika
