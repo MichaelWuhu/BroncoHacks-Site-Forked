@@ -16,7 +16,7 @@ Amar Ghandi
 **Developers:**  
 Jerry  
 Tommy Phao  
-Jairus  
+Jairus Legion  
 Rebecca Smith  
 Rane  
 Armin Erika
