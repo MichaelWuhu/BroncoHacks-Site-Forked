@@ -19,4 +19,5 @@ Tommy Phao
 Jairus Legion  
 Rebecca Smith  
 Rane Dy  
-Armin Erika
+Armin Erika  
+Maddie Isaacs
