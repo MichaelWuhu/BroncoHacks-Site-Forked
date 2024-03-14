@@ -7,6 +7,10 @@
 **Project Manager:**  
 Michael Wu
 
+**Technical Consultants:**  
+Amar Gandhi  
+Tony Tong
+
 **Tech Leads:**  
 Daniel Pasion  
 Chris J Lo  
