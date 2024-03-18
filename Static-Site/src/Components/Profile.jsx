@@ -5,17 +5,18 @@ function Member({ person }) {
     <div className="profile">
       <img
         className="profilepicture"
-        src={person.image}
+        src={person.picture}
         alt={"Picture of" + person.name}
       />
       <div className="profilebody">
         <name>{person.name}</name>
-        <major>{person.major}</major>
-        <etc>{person.role}</etc>
-        <etc>{person.year}</etc>
-        <etc>{person.link}</etc>
+        <role>{person.role}</role>
       </div>
-    </div>
+      <a href={person.linkedin}>
+      <img className="linkedinpicture"
+        src="https://cdn-icons-png.flaticon.com/256/174/174857.png"/>
+      </a>
+      </div>
   );
 }
 
@@ -26,11 +27,9 @@ function ProfileProps() {
         size={100}
         person={{
           name: "Tommy Phao",
-          major: "Business Administration - Computer Information Systems",
-          role: "test",
-          year: "Second year",
-          link: "https://github.com/xdkaine",
-          image:
+          role: "Web Developer",
+          linkedin: "https://linkedin.com",
+          picture:
             "https://media.licdn.com/dms/image/D5603AQFI7ZBRCOheqQ/profile-displayphoto-shrink_200_200/0/1698549537540?e=1715817600&v=beta&t=ojbaGRCop6sU6VzK6VmFyc9n0dPMdnSQPrvw2E-iL_I",
         }}
       />
