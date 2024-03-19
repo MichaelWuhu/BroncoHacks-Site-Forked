@@ -1,4 +1,4 @@
-import "./Profile.css"; /* temporary just so it visually looks fine */
+import "../styles/Profile.css"; /* temporary just so it visually looks fine */
 
 function Member({ person }) {
   return (
