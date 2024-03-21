@@ -13,16 +13,19 @@ function Member({ person }) {
         <role>{person.role}</role>
       </div>
       <a href={person.linkedin}>
-      <img className="linkedinpicture"
-        src="https://cdn-icons-png.flaticon.com/256/174/174857.png"/>
+        <img
+          className="linkedinpicture"
+          src="../src/Assets/Profile/icon/linkedin-small.png"
+        />
       </a>
-      </div>
+    </div>
   );
 }
 
 function ProfileProps() {
   return (
     <>
+    
       <Member
         size={100}
         person={{
@@ -30,45 +33,9 @@ function ProfileProps() {
           role: "Web Developer",
           linkedin: "https://www.linkedin.com/in/thomasphao/",
           picture:
-            "https://media.licdn.com/dms/image/D5603AQFI7ZBRCOheqQ/profile-displayphoto-shrink_200_200/0/1698549537540?e=1715817600&v=beta&t=ojbaGRCop6sU6VzK6VmFyc9n0dPMdnSQPrvw2E-iL_I",
-        }}
-      />      <Member
-      size={100}
-      person={{
-        name: "Tommy Phao",
-        role: "Web Developer",
-        linkedin: "https://www.linkedin.com/in/thomasphao/",
-        picture:
-          "https://media.licdn.com/dms/image/D5603AQFI7ZBRCOheqQ/profile-displayphoto-shrink_200_200/0/1698549537540?e=1715817600&v=beta&t=ojbaGRCop6sU6VzK6VmFyc9n0dPMdnSQPrvw2E-iL_I",
-      }}
-    />      <Member
-    size={100}
-    person={{
-      name: "Tommy Phao",
-      role: "Web Developer",
-      linkedin: "https://www.linkedin.com/in/thomasphao/",
-      picture:
-        "https://media.licdn.com/dms/image/D5603AQFI7ZBRCOheqQ/profile-displayphoto-shrink_200_200/0/1698549537540?e=1715817600&v=beta&t=ojbaGRCop6sU6VzK6VmFyc9n0dPMdnSQPrvw2E-iL_I",
-    }}
-  />      <Member
-  size={100}
-  person={{
-    name: "Tommy Phao",
-    role: "Web Developer",
-    linkedin: "https://www.linkedin.com/in/thomasphao/",
-    picture:
-      "https://media.licdn.com/dms/image/D5603AQFI7ZBRCOheqQ/profile-displayphoto-shrink_200_200/0/1698549537540?e=1715817600&v=beta&t=ojbaGRCop6sU6VzK6VmFyc9n0dPMdnSQPrvw2E-iL_I",
-  }}
-/>      <Member
-        size={100}
-        person={{
-          name: "Tommy Phao",
-          role: "Web Developer",
-          linkedin: "https://www.linkedin.com/in/thomasphao/",
-          picture:
-            "https://media.licdn.com/dms/image/D5603AQFI7ZBRCOheqQ/profile-displayphoto-shrink_200_200/0/1698549537540?e=1715817600&v=beta&t=ojbaGRCop6sU6VzK6VmFyc9n0dPMdnSQPrvw2E-iL_I",
-        }}
-      />
+            "../src/Assets/Profile/team/Tommy.jpg",
+        }}/>
+        
     </>
   );
 }
