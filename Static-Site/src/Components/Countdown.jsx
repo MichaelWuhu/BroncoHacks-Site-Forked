@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 
 /*
-Requires the deadline to be passed as a parameter to Countdown
-Example, to use in App:
-
-let deadline = "October, 31, 2024"; 
+Requires deadline to be passed on as a parameter
+Example:
+let deadline = "October, 31, 2024";
 <Countdown deadline={deadline} />
 */
 
@@ -41,11 +40,19 @@ function Countdown({deadline}) {
 
     return (
       <>
-        <div className="countdown" role="timer" tabIndex="0">
-          <span className="countdown-days">{createLeadingZero(days)}:</span>
-          <span className="countdown-hours">{createLeadingZero(hours)}:</span>
-          <span className="countdown-minutes">{createLeadingZero(minutes)}:</span>
-          <span className="countdown-seconds">{createLeadingZero(seconds)}</span>
+        <div className="countdown-container" role="timer" tabIndex="0">
+          <div className="countdown-time-wrapper">
+            <span className="countdown-days">{createLeadingZero(days)}:</span>
+            <span className="countdown-hours">{createLeadingZero(hours)}:</span>
+            <span className="countdown-minutes">{createLeadingZero(minutes)}:</span>
+            <span className="countdown-seconds">{createLeadingZero(seconds)}</span>
+          </div>
+          <div className="countdown-txt-wrapper">
+            <span className="countdown-txt-days">Days</span>
+            <span className="countdown-txt-hours">Hours</span>
+            <span className="countdown-txt-minutes">Minutes</span>
+            <span className="countdown-txt-seconds">Seconds</span>
+          </div>
         </div>
       </>
     )
