@@ -1,6 +1,6 @@
 import "../styles/Profile.css"; /* temporary just so it visually looks fine */
 
-function Member({ person }) {
+function Profile({ person }) {
   return (
     <div className="profile">
       <img
@@ -18,35 +18,6 @@ function Member({ person }) {
           src="../src/Assets/Profile/icon/linkedin-small.png"
         />
       </a>
-    </div>
-  );
-}
-
-function ProfileProps() {
-  return (
-    <>
-    
-      <Member
-        size={100}
-        person={{
-          name: "Tommy Phao",
-          role: "Web Developer",
-          linkedin: "https://www.linkedin.com/in/thomasphao/",
-          picture:
-            "../src/Assets/Profile/team/Tommy.jpg",
-        }}/>
-        
-    </>
-  );
-}
-
-function Profile() {
-  return (
-    <div className="container">
-      <h2>Meet the Team!</h2>
-      <div className="profilegrid">
-        <ProfileProps />
-      </div>
     </div>
   );
 }
