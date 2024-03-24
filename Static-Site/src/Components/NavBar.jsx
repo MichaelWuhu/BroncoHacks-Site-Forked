@@ -1,10 +1,13 @@
-function NavBar() {
+import { Link } from 'react-router-dom'
 
+function NavBar() {
     return (
-      <>
-        <div>NavBar Component</div>
-      </>
+      <nav>
+        <Link to={"../FAQ"}>FAQ </Link>
+        <Link to={"../MeetTheTeam"}>Meet The Team </Link>
+        <Link to={"../Sponsors"}>Sponsors </Link>
+      </nav>
     )
   }
   
-  export default NavBar
+export default NavBar
