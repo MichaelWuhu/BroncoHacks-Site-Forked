@@ -1,27 +1,28 @@
-import { useState } from "react";
-
+import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom' 
+import '../src/App.css'
+import NavBar from './Components/NavBar'
+import FAQ from './Pages/FAQ'
+import MeetTheTeam from './Pages/MeetTheTeam'
+import Sponsors from './Pages/Sponsors'
 import Profile from "./Components/Profile.jsx";
 import "./styles/Profile.css"; /* temporary just so it visually looks fine */
 
 function App() {
   return (
-    <>
-      <div>Home/Starting Page</div>
-      <div className="container">
-        <div className="profilegrid">
-          <Profile
-            person={{
-              name: "Tommy Phao",
-              role: "Web Developer",
-              linkedin: "https://www.linkedin.com/in/thomasphao/",
-              picture: "../src/Assets/Profile/team/Tommy.jpg",
-            }}
-          ></Profile>
-        </div>
+    <Router>
+      <div className="navbar">
+        <NavBar/>
       </div>
-
-    </>
-  );
+      <Routes>
+          <Route path="FAQ" element={<FAQ/>}/>
+          <Route path="MeetTheTeam" element={<MeetTheTeam/>}/>
+          <Route path="Sponsors" element={<Sponsors/>}/>
+      </Routes>
+    </Router>
+  )
 }
-
 export default App;
+
+
+
