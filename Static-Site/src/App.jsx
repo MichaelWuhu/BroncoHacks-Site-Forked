@@ -20,6 +20,7 @@ function App() {
           <Route path="Sponsors" element={<Sponsors/>}/>
       </Routes>
     </Router>
+  )
 }
 export default App;
 
