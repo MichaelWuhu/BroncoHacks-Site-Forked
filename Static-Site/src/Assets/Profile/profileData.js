@@ -14,7 +14,7 @@ const profileData = [
     {
         name: 'Rane Dy',
         role: 'Developer',
-        picture: '/src/Assets/Profile/team/user.png',  
+        picture: '/src/Assets/Profile/team/RANE.jpg',  
         linkedin: 'https://www.linkedin.com/in/ranedy',
     },
     {
