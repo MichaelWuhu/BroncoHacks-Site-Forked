@@ -13,7 +13,11 @@ const person = props.person;
       />
       <div className="profilebody">
         <name>{person.name}</name>
-        <role>{person.role}</role>
+        { <div className="roles">
+          {person.role.map((role, index) => (
+            <role key={index}>{role}</role>
+          ))}
+        </div> }
       </div>
       <a href={person.linkedin}>
         <img
