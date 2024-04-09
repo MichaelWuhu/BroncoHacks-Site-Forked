@@ -3,6 +3,7 @@ import "../styles/Footer.css";
 function Footer() {
     return (
       <footer>
+        <hr></hr>
         <div class="container">
           <div class="footer-content">
             <img className="broncohackslogo" src="../src/Assets/Profile/icon/BroncoHacks_Logo.png"/>

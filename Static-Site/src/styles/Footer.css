@@ -6,7 +6,7 @@
 }
 
 footer{
-    position: fixed;
+    /*position: fixed;*/
     bottom: 0;
     width: 100%;
 }
@@ -21,12 +21,11 @@ footer{
 
 
 img {
-    height: 50px;
+    height: 10vh;
 }
 
 img.broncohackslogo{
-    height:100px;
-    padding-bottom: 10px;
+    height:15vh;
 }
 
 h3{
