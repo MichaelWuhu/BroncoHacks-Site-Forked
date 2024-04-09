@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom' 
 import '../src/App.css'
 import NavBar from './Components/NavBar'
+import Home from './Pages/Home.jsx'
 import FAQ from './Pages/FAQ'
 import MeetTheTeam from './Pages/MeetTheTeam'
 import Sponsors from './Pages/Sponsors'
@@ -16,9 +17,10 @@ function App() {
         <NavBar/>
       </div>
       <Routes>
-          <Route path="FAQ" element={<FAQ/>}/>
-          <Route path="MeetTheTeam" element={<MeetTheTeam/>}/>
-          <Route path="Sponsors" element={<Sponsors/>}/>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/FAQ" element={<FAQ/>}/>
+          <Route path="/MeetTheTeam" element={<MeetTheTeam/>}/>
+          <Route path="/Sponsors" element={<Sponsors/>}/>
       </Routes>
       <div className="foot">
         <Footer/>
