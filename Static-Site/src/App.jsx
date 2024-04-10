@@ -11,9 +11,7 @@ import "./styles/Profile.css"; /* temporary just so it visually looks fine */
 function App() {
   return (
     <Router>
-      <div className="navbar">
-        <NavBar/>
-      </div>
+      <NavBar className="navbar" />
       <Routes>
           <Route path="FAQ" element={<FAQ/>}/>
           <Route path="MeetTheTeam" element={<MeetTheTeam/>}/>
