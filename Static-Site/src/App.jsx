@@ -13,14 +13,12 @@ import Countdown from "./Components/Countdown.jsx";
 import DescriptionBox from "./Components/DescriptionBox.jsx";
 
 function App() {
-  let deadline = "October, 31, 2024";
-
   return (
     <Router>
       <div className="navbar">
         <NavBar/>
       </div>
-      <Countdown deadline={deadline} />
+      <Countdown deadline="October, 31, 2024" />
       <DescriptionBox/>
       <Routes>
           <Route path="/" element={<Home/>}/>

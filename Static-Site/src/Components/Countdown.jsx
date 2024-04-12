@@ -1,3 +1,4 @@
+import "../styles/Countdown.css";
 import React, { useEffect, useState } from "react";
 
 /*
@@ -5,6 +6,8 @@ Requires deadline to be passed on as a parameter
 Example:
 let deadline = "October, 31, 2024";
 <Countdown deadline={deadline} />
+or 
+<Countdown deadline="October, 31, 2024" />
 */
 
 function Countdown(props) {
