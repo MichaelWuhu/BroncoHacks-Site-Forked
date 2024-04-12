@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "../styles/Countdown.css";
 
 /*
 Requires deadline to be passed on as a parameter
