@@ -65,10 +65,10 @@ function Countdown(props) {
     </>
   );
 };
-
+/** 
 Countdown.propTypes = {
   deadline: PropTypes.string.isRequired,
-};
+}; */
 
 export default Countdown;
 

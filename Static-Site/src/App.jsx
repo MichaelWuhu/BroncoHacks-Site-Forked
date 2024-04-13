@@ -19,7 +19,6 @@ function App() {
         <NavBar/>
       </div>
       <Countdown deadline="October, 31, 2024" />
-      <DescriptionBox/>
       <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/FAQ" element={<FAQ/>}/>
