@@ -9,3 +9,5 @@ export const slidesData = [
         url: 'https://staticg.sportskeeda.com/editor/2022/11/3ed91-16674165139406-1920.jpg'
     }
 ]
+
+export default slidesData;

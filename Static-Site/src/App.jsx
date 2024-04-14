@@ -9,8 +9,6 @@ import Sponsors from './Pages/Sponsors'
 import Profile from "./Components/Profile.jsx"
 import Footer from './Components/Footer.jsx'
 import "./styles/Profile.css"; /* temporary just so it visually looks fine */
-import Countdown from "./Components/Countdown.jsx";
-import DescriptionBox from "./Components/DescriptionBox.jsx";
 
 function App() {
   return (
@@ -18,7 +16,6 @@ function App() {
       <div className="navbar">
         <NavBar/>
       </div>
-      <Countdown deadline="October, 31, 2024" />
       <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/FAQ" element={<FAQ/>}/>
