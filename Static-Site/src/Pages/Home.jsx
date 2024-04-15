@@ -8,13 +8,17 @@ function Home() {
 
     return (
       <>
-        <DescriptionBox/>
-        <div className="slides">
-          <div className="containerStyles">
-            <Slideshow slides={slidesData}/>
+        <div className="home-featured-container">
+          <div className="home-featured-row1">
+            <DescriptionBox/>
+            <div className="slides">
+              <div className="containerStyles">
+                <Slideshow slides={slidesData}/>
+              </div>
+            </div>
           </div>
+          <Countdown deadline="October, 31, 2024" />
         </div>
-        <Countdown deadline="October, 31, 2024" />
       </>
     )
   }

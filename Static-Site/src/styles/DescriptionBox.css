@@ -1,42 +1,50 @@
-.descbox-container {
+.db-container {
    position: relative;
    width: 464px;
-   height: 264px;
-   margin: 0 auto;
+   height: 250px;
    background-color:white;
    border-radius: 10px;
    box-shadow: 0 1px 3px gray;
    padding: 1em;
-   margin-bottom: 0.2em;
+   margin: 1em auto;
 }
 
-.descbox-title h1 {
+.db-title h1 {
     font-size: 3.2em;
 }
 
-.descbox-title h2 {
+.db-title h2 {
     color: green;
 }
 
-.descbox-title-wrapper {
+.db-title-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: center;
 }
 
-.descbox-content-wrapper {
+.db-content-wrapper {
     display: grid;
     grid-template-columns: 0.4fr 1fr;
     align-items: center;
 }
-.descbox-filler {
-    height: 9.3em;
-    width: 10em;
+.db-filler {
+    height: 7em;
+    width: 9em;
 }
-.descbox-mascot {
+.db-mascot {
     position: absolute;
-    height: 9.3em;
+    height: 8em;
     bottom: 0;
     left: 0;
+}
+
+/* ---- Media Queries ---- */
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    /* For Home Page*/    
+    .db-container {
+        margin: 0;
+    }
 }

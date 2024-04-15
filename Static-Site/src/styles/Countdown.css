@@ -1,8 +1,7 @@
-.countdown-container {
+.cd-container {
     position: relative;
     width: 464px;
-    height: auto;
-    margin: 0 auto;
+    margin: 0.2em auto;
     background-color:white;
     border-radius: 10px;
     box-shadow: 0 1px 3px gray;
@@ -10,46 +9,38 @@
     text-align: center;
  }
 
- .countdown-time-wrapper {
+ .cd-time-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
  }
 
-.countdown-title {
+.cd-title {
     padding: 0.5em 0 0.5em 0;
 }
 
- .countdown-days,
- .countdown-hours,
- .countdown-minutes,
- .countdown-seconds {
+ .cd-time-wrapper h1 {
     font-size: 3em;
     padding: 0 0.2em 0 0.2em;
     background-color:lightblue;
     border-radius: 10px;
  }
 
- .countdown-time-wrapper h1 {
-    font-size: 3em;
+ .cd-semicolon {
+   font-size: 3em;
+   font-weight: bold;
+   padding: 0 0.2em 0 0.2em;
  }
 
- .countdown-txt-wrapper {
+ .cd-txt-wrapper {
     display: flex;
+    column-gap: 1em;
     align-items: center;
     justify-content: center;
     padding: 0.5em;
  }
- .countdown-txt-wrapper h3 {
+ .cd-txt-wrapper h3 {
     color: green;
-    padding: 0 0.4em 0 0.4em;
- }
-
- .countdown-txt-days {
     width: 100px;
-    margin-left: 20px;
  }
 
- .countdown-txt-minutes {
-    margin-left: 20px;
- }
