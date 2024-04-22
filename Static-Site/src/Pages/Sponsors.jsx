@@ -32,6 +32,8 @@ function Sponsors() {
     { id: 4, logo: avanade, text: "Avanade" },
     { id: 5, logo: google, text: "Google" },
     { id: 6, logo: npm, text: "npm" },
+  ];
+  const sponsorLogos3 = [
     { id: 7, logo: att, text: "AT&T" },
     { id: 8, logo: grubhub, text: "Grubhub" },
     { id: 9, logo: openai, text: "OpenAI" },
@@ -49,44 +51,58 @@ function Sponsors() {
           <img src={checkeredFlag} className="checkered-flag right" alt="Checkered Flag" />
         </div>
 
-        <div className="marquee-container">
-          <div className="marquee">
-            {sponsorLogos.map((logo) => (
-              <div key={logo.id} className="logo-wrapper" onMouseEnter={() => handleLogoHover(logo)} onMouseLeave={handleLogoLeave}>
-                <img src={logo.logo} alt={logo.text} />
-                {hoveredLogo && hoveredLogo.id === logo.id && (
-                  <div className="company-info">
-                    <span>
-                      <h2>{logo.text}</h2>
-                      <p>A brief description of the company...</p>
-                      <p>Contact: contact@example.com</p>
-                      <p>Website: <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">www.example.com</a></p>
-                    </span>
-                  </div>
-                )}
-              </div> 
-            ))}
-          </div>
+        <div className="logo-row">
+          {sponsorLogos.map((logo) => (
+            <div key={logo.id} className="logo-wrapper" onMouseEnter={() => handleLogoHover(logo)} onMouseLeave={handleLogoLeave}>
+              <img src={logo.logo} alt={logo.text} />
+              {hoveredLogo && hoveredLogo.id === logo.id && (
+                <div className="company-info">
+                  <span>
+                    <h2>{logo.text}</h2>
+                    <p>A brief description of the company...</p>
+                    <p>Contact: contact@example.com</p>
+                    <p>Website: <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">www.example.com</a></p>
+                  </span>
+                </div>
+              )}
+            </div> 
+          ))}
         </div>
 
-        <div className="marquee-container">
-          <div className="marquee2">
-            {sponsorLogos2.map((logo) => (
-              <div key={logo.id} className="logo-wrapper" onMouseEnter={() => handleLogoHover(logo)} onMouseLeave={handleLogoLeave}>
-                <img src={logo.logo} alt={logo.text} />
-                {hoveredLogo && hoveredLogo.id === logo.id && (
-                  <div className="company-info">
-                    <span>
-                      <h2>{logo.text}</h2>
-                      <p>A brief description of the company...</p>
-                      <p>Contact: contact@example.com</p>
-                      <p>Website: <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">www.example.com</a></p>
-                    </span>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+        <div className="logo-row">
+          {sponsorLogos2.map((logo) => (
+            <div key={logo.id} className="logo-wrapper" onMouseEnter={() => handleLogoHover(logo)} onMouseLeave={handleLogoLeave}>
+              <img src={logo.logo} alt={logo.text} />
+              {hoveredLogo && hoveredLogo.id === logo.id && (
+                <div className="company-info">  
+                  <span>
+                    <h2>{logo.text}</h2>
+                    <p>A brief description of the company...</p>
+                    <p>Contact: contact@example.com</p>
+                    <p>Website: <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">www.example.com</a></p>
+                  </span>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div className="logo-row">
+          {sponsorLogos3.map((logo) => (
+            <div key={logo.id} className="logo-wrapper" onMouseEnter={() => handleLogoHover(logo)} onMouseLeave={handleLogoLeave}>
+              <img src={logo.logo} alt={logo.text} />
+              {hoveredLogo && hoveredLogo.id === logo.id && (
+                <div className="company-info">
+                  <span>
+                    <h2>{logo.text}</h2>
+                    <p>A brief description of the company...</p>
+                    <p>Contact: contact@example.com</p>
+                    <p>Website: <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">www.example.com</a></p>
+                  </span>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
 
       </div>

@@ -99,64 +99,61 @@
 }
 
 
-/* logo marquee styling */
-.marquee-container {
-    overflow: hidden;
-    white-space: nowrap;
-    align-items: center;
-    width: 100%;
+/* logo float styling */
+.logo-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align logos at the top of each row */
+    
 }
-  
-.marquee {
-    animation: marquee 28s linear infinite;
-    position: absolute;
-    bottom: 28%;
 
-    &:hover {
-        visibility: visible; /* Show on hover */
-        animation-play-state: paused;
-    }
+/* CSS for the first logo row */
+.logo-row:nth-child(2) {
+    margin-top: 600px; /* Add spacing between rows */
+    margin-left: 200px;
 }
-  
-.marquee2 {
-    animation: marquee 36s linear infinite;
-    position: absolute;
-    bottom: 45%;
 
-    &:hover {
-        visibility: visible; /* Show on hover */
-        animation-play-state: paused;
-    }
-}  
-  
-@keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-115%); }
-} 
+/* CSS for the second logo row */
+.logo-row:nth-child(3) {
+    margin-top: 750px; /* Add spacing between rows */
+    margin-left: -750px;
+}
 
-/* sponsor logo styling */
-.marquee-container img {
-    max-width: 300px;
+/* CSS for the third logo row */
+.logo-row:nth-child(4) {
+    margin-top: 750px; /* Add spacing between rows */
+}
+
+
+/* Adjust logo size */
+.logo-row img {
+    max-width: 150px; /* Adjust the max-width of the logo */
     height: auto;
-    margin: 0 180px;
-    cursor: pointer;
 }
 
-
-/* company info styling */
+/* Apply floating animation to logo wrappers */
 .logo-wrapper {
     position: relative;
     display: inline-block; 
-    margin: 0 10px; 
+    margin: 10px; 
+    animation: floatLogo 5s ease-in-out infinite alternate;
 }
 
-.company-info {
+@keyframes floatLogo {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Position company info tooltip */
+.logo-row:nth-child(2) .company-info {
     position: absolute;
-    bottom: 120%;
+    top: -300%; /* adjust as needed */
     left: 50%;
     transform: translateX(-50%);                                                                                                                                                                                                                                                                                                                               
-    width: 200px; /* Adjust the width of the company info box */
-    padding: 10px;
+    width: 90px; /* Adjust the width of the company info box */
+    padding: 8px;
+    font-size: 11px; /* Adjust the font size of the tooltip */
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -165,9 +162,25 @@
     transition: visibility 0s, opacity 0.3s linear; /* Add transition effect */
 }
 
-.marquee .company-info {
+.company-info {
+    position: absolute;
+    bottom: 100%; /* adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);                                                                                                                                                                                                                                                                                                                               
+    width: 90px; /* Adjust the width of the company info box */
+    padding: 8px;
+    font-size: 11px; /* Adjust the font size of the tooltip */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    visibility: hidden; /* Hide initially */
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s linear; /* Add transition effect */
+}
+
+.company-info {
     bottom: auto; /* Reset the bottom position */
-    top: 90%; /* Position the popup slightly below the logo */
+    top: 100%; /* Position the popup slightly below the logo */
 }
   
 .company-info span {
