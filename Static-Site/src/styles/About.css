@@ -4,8 +4,9 @@
 }
 
 body{
-    background-image: url('../src/Assets/Backgrounds/About-background.png');
-    background-color: lightblue; /*remove once background image works*/
+    /* --- Commented out background image for now bcuz we still deciding how it would look */
+    /* background-image: url('../src/Assets/Backgrounds/About-background.png'); */
+    /* background-color: lightblue;  */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
