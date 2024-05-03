@@ -8,7 +8,7 @@
     background-position: center;
     height: 100vh;
 }
-  
+
 
 /* cloud banner styling */
 .cloud-banner {
@@ -34,12 +34,12 @@
     height: auto;
     transform: translateY(-50%);
 }
-  
+
 .checkered-flag.left {
     left: -80px; /* Adjust the distance from the left edge */
     transform: translateY(-50%) scaleX(-1); /* Flip horizontally */
 }
-  
+
 .checkered-flag.right {
     right: -80px; /* Adjust the distance from the right edge */
 }
@@ -104,24 +104,24 @@
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Align logos at the top of each row */
-    
+    cursor: pointer;
 }
 
 /* CSS for the first logo row */
 .logo-row:nth-child(2) {
-    margin-top: 600px; /* Add spacing between rows */
-    margin-left: 200px;
+    margin-top: 590px; /* Add spacing between rows */
+    margin-left: 400px;
 }
 
 /* CSS for the second logo row */
 .logo-row:nth-child(3) {
-    margin-top: 750px; /* Add spacing between rows */
-    margin-left: -750px;
+    margin-top: 700px; /* Add spacing between rows */
+    margin-left: -975px;
 }
 
 /* CSS for the third logo row */
 .logo-row:nth-child(4) {
-    margin-top: 750px; /* Add spacing between rows */
+    margin-top: 700px; /* Add spacing between rows */
 }
 
 
@@ -129,6 +129,7 @@
 .logo-row img {
     max-width: 150px; /* Adjust the max-width of the logo */
     height: auto;
+    padding: 20px;
 }
 
 /* Apply floating animation to logo wrappers */
@@ -140,19 +141,20 @@
 }
 
 @keyframes floatLogo {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
 }
 
 /* Position company info tooltip */
 .logo-row:nth-child(2) .company-info {
     position: absolute;
-    top: -300%; /* adjust as needed */
+    top: -75%; /* adjust as needed */
     left: 50%;
-    transform: translateX(-50%);                                                                                                                                                                                                                                                                                                                               
-    width: 90px; /* Adjust the width of the company info box */
-    padding: 8px;
+    transform: translateX(-50%);           
+    height: auto;                                                                                                                                                                                                                                                                                                                       
+    width: 175px; /* Adjust the width of the company info box */
+    padding: 5px;
     font-size: 11px; /* Adjust the font size of the tooltip */
     background-color: #fff;
     border-radius: 10px;
@@ -164,11 +166,12 @@
 
 .company-info {
     position: absolute;
-    bottom: 100%; /* adjust as needed */
+    bottom: 175%; /* adjust as needed */
     left: 50%;
-    transform: translateX(-50%);                                                                                                                                                                                                                                                                                                                               
-    width: 90px; /* Adjust the width of the company info box */
-    padding: 8px;
+    transform: translateX(-50%);             
+    height: auto;                                                                                                                                                                                                                                                                                                                  
+    width: 175px; /* Adjust the width of the company info box */
+    padding: 5px;
     font-size: 11px; /* Adjust the font size of the tooltip */
     background-color: #fff;
     border-radius: 10px;
@@ -182,12 +185,12 @@
     bottom: auto; /* Reset the bottom position */
     top: 100%; /* Position the popup slightly below the logo */
 }
-  
+
 .company-info span {
     width: max-content; /* Set the width to fit the content */
     padding: 10px; /* Add padding to create some space between the text and the edge of the box */
   }
-  
+
 .logo-wrapper:hover .company-info {
     visibility: visible; /* Show on hover */
     opacity: 1;

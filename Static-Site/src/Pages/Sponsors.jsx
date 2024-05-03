@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import '../styles/Sponsors.css';
 import checkeredFlag from "../Assets/Design/checkeredflag.png";
+import sponsorsData from "../Assets/Sponsors/sponsors.json";
+
+// Import the image files
 import adobe from "../Assets/Sponsors/adobe.png";
 import att from "../Assets/Sponsors/att.png";
 import avanade from "../Assets/Sponsors/avanade.png";
@@ -52,57 +55,85 @@ function Sponsors() {
         </div>
 
         <div className="logo-row">
-          {sponsorLogos.map((logo) => (
-            <div key={logo.id} className="logo-wrapper" onMouseEnter={() => handleLogoHover(logo)} onMouseLeave={handleLogoLeave}>
-              <img src={logo.logo} alt={logo.text} />
-              {hoveredLogo && hoveredLogo.id === logo.id && (
-                <div className="company-info">
-                  <span>
-                    <h2>{logo.text}</h2>
-                    <p>A brief description of the company...</p>
-                    <p>Contact: contact@example.com</p>
-                    <p>Website: <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">www.example.com</a></p>
-                  </span>
-                </div>
-              )}
-            </div> 
-          ))}
+          {sponsorLogos.map((logo) => {
+            // Find the sponsor object in sponsorsData with the matching name
+            const sponsor = sponsorsData.find((sponsor) => sponsor.name === logo.text);
+            return (
+              <div key={logo.id} className="logo-wrapper" onMouseEnter={() => handleLogoHover(logo)} onMouseLeave={handleLogoLeave}>
+                <img src={logo.logo} alt={logo.text} />
+                {hoveredLogo && hoveredLogo.id === logo.id && (
+                  <div className="company-info">
+                    <span>
+                      <h2>{logo.text}</h2>
+                      {/* Check if sponsor is found before accessing its properties */}
+                      {sponsor && (
+                        <>
+                          <p>{sponsor.description}</p>
+                          <p>Contact: {sponsor.email}</p>
+                          <p>Website: <a href={sponsor.website} target="_blank" rel="noopener noreferrer">{sponsor.website}</a></p>
+                        </>
+                      )}
+                    </span>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+
+        <div className="logo-row">
+          {sponsorLogos2.map((logo) => {
+            // Find the sponsor object in sponsorsData with the matching name
+            const sponsor = sponsorsData.find((sponsor) => sponsor.name === logo.text);
+            return (
+              <div key={logo.id} className="logo-wrapper" onMouseEnter={() => handleLogoHover(logo)} onMouseLeave={handleLogoLeave}>
+                <img src={logo.logo} alt={logo.text} />
+                {hoveredLogo && hoveredLogo.id === logo.id && (
+                  <div className="company-info">
+                    <span>
+                      <h2>{logo.text}</h2>
+                      {/* Check if sponsor is found before accessing its properties */}
+                      {sponsor && (
+                        <>
+                          <p>{sponsor.description}</p>
+                          <p>Contact: {sponsor.email}</p>
+                          <p>Website: <a href={sponsor.website} target="_blank" rel="noopener noreferrer">{sponsor.website}</a></p>
+                        </>
+                      )}
+                    </span>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
 
         <div className="logo-row">
-          {sponsorLogos2.map((logo) => (
-            <div key={logo.id} className="logo-wrapper" onMouseEnter={() => handleLogoHover(logo)} onMouseLeave={handleLogoLeave}>
-              <img src={logo.logo} alt={logo.text} />
-              {hoveredLogo && hoveredLogo.id === logo.id && (
-                <div className="company-info">  
-                  <span>
-                    <h2>{logo.text}</h2>
-                    <p>A brief description of the company...</p>
-                    <p>Contact: contact@example.com</p>
-                    <p>Website: <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">www.example.com</a></p>
-                  </span>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-
-        <div className="logo-row">
-          {sponsorLogos3.map((logo) => (
-            <div key={logo.id} className="logo-wrapper" onMouseEnter={() => handleLogoHover(logo)} onMouseLeave={handleLogoLeave}>
-              <img src={logo.logo} alt={logo.text} />
-              {hoveredLogo && hoveredLogo.id === logo.id && (
-                <div className="company-info">
-                  <span>
-                    <h2>{logo.text}</h2>
-                    <p>A brief description of the company...</p>
-                    <p>Contact: contact@example.com</p>
-                    <p>Website: <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">www.example.com</a></p>
-                  </span>
-                </div>
-              )}
-            </div>
-          ))}
+          {sponsorLogos3.map((logo) => {
+            // Find the sponsor object in sponsorsData with the matching name
+            const sponsor = sponsorsData.find((sponsor) => sponsor.name === logo.text);
+            return (
+              <div key={logo.id} className="logo-wrapper" onMouseEnter={() => handleLogoHover(logo)} onMouseLeave={handleLogoLeave}>
+                <img src={logo.logo} alt={logo.text} />
+                {hoveredLogo && hoveredLogo.id === logo.id && (
+                  <div className="company-info">
+                    <span>
+                      <h2>{logo.text}</h2>
+                      {/* Check if sponsor is found before accessing its properties */}
+                      {sponsor && (
+                        <>
+                          <p>{sponsor.description}</p>
+                          <p>Contact: {sponsor.email}</p>
+                          <p>Website: <a href={sponsor.website} target="_blank" rel="noopener noreferrer">{sponsor.website}</a></p>
+                        </>
+                      )}
+                    </span>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
 
       </div>
