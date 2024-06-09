@@ -7,131 +7,29 @@
 <br/>
 
 ### **Project Manager:**  
+|       |
+| :---: |
+| <img width="50" src="https://github.com/MichaelWuhu.png"/></br>[Michael Wu](https://github.com/MichaelWuhu) |
+|       |       |
 
-<div style="display: flex; flex-wrap: wrap;">
-    <!-- Michael Wu -->
-    <div style="margin: 10px 25px 50px 25px; width: 130px; height: 130px; white-space: nowrap;" align="center">
-        <a href="https://github.com/MichaelWuhu">
-            <img src="https://github.com/MichaelWuhu.png" width="130" style="border-radius: 50%;" alt=""/>
-            <br/>
-            <sub style="font-size: 14px;"><b>Michael Wu</b></sub>
-        </a>
-    </div>
-</div>
 
-<br/>
 
 ### **Tech Consultants:**  
+|       |       |
+| :---: | :---: |
+| <img width="50" src="https://github.com/acgandhi.png"/></br>[Amar Gandhi](https://github.com/acgandhi) | <img width="50" src="https://github.com/TonyTong112358.png"/></br>[Tony Tong](https://github.com/TonyTong112358) |
+|       |       |
 
-<div style="display: flex; flex-wrap: wrap;">
-    <!-- Amar Gandhi -->
-    <div style="margin: 10px 25px 50px 25px; width: 130px; height: 130px; white-space: nowrap;"  align="center">
-        <a href="https://github.com/acgandhi">
-            <img src="https://github.com/acgandhi.png" width="130" style="border-radius: 50%;" alt=""/>
-            <br />
-            <sub style="font-size: 14px;"><b>Amar Gandhi</b></sub>
-        </a>
-    </div>
-    <!-- Toni Ji-Chek Tong -->
-    <div style="margin: 10px 25px 50px 25px; width: 130px; height: 130px; white-space: nowrap;"  align="center">
-        <a href="https://github.com/TonyTong112358">
-            <img src="https://github.com/TonyTong112358.png" width="130" style="border-radius: 50%;" alt=""/>
-            <br />
-            <sub style="font-size: 14px;"><b>Tony Tong</b></sub>
-        </a>
-    </div>
-</div>
-
-<br/>
 
 ### **Tech Leads:**  
-
-<div style="display: flex; flex-wrap: wrap;">
-    <!-- Daniel Pasion -->
-    <div style="margin: 10px 25px 50px 25px; width: 130px; height: 130px; white-space: nowrap;" align="center">
-        <a href="https://github.com/DanielPasion">
-            <img src="https://github.com/DanielPasion.png" width="130" style="border-radius: 50%;" alt=""/>
-            <br />
-            <sub style="font-size: 14px;"><b>Daniel Pasion</b></sub>
-        </a>
-    </div>
-    <!-- Chris J Lo -->
-    <div style="margin: 10px 25px 50px 25px; width: 130px; height: 130px; white-space: nowrap;" align="center">
-        <a href="https://github.com/christopherjlo">
-            <img src="https://github.com/christopherjlo.png" width="130" style="border-radius: 50%;" alt=""/>
-            <br />
-            <sub style="font-size: 14px;"><b>Chris J Lo</b></sub>
-        </a>
-    </div>
-    <!-- Justin Nguyen -->
-    <div style="margin: 10px 25px 50px 25px; width: 130px; height: 130px; white-space: nowrap;" align="center">
-        <a href="https://github.com/chillwafflez">
-            <img src="https://github.com/chillwafflez.png" width="130" style="border-radius: 50%;" alt=""/>
-            <br />
-            <sub style="font-size: 14px;"><b>Justin Nguyen</b></sub>
-        </a>
-    </div>
-</div>
-
-<br/>
+|       |       |       |
+| :---: | :---: | :---: |
+| <img width="50" src="https://github.com/DanielPasion.png"/></br>[Daniel Pasion](https://github.com/DanielPasion) | <img width="50" src="https://github.com/christopherjlo.png"/></br>[Chris J Lo](https://github.com/christopherjlo) | <img width="50" src="https://github.com/chillwafflez.png"/></br>[Justin Nguyen](https://github.com/chillwafflez) |
+|       |       |
 
 ### **Developers:**  
-
-<div style="display: flex; flex-wrap: wrap;">
-    <!-- Jerry Solis -->
-    <div style="margin: 10px 25px 75px 25px; width: 130px; height: 130px; white-space: nowrap;" align="center">
-        <a href="https://github.com/Sol-Gerardo">
-            <img src="https://github.com/Sol-Gerardo.png" width="130" style="border-radius: 50%;" alt=""/>
-            <br />
-            <sub style="font-size: 14px;"><b>Jerry Solis</b></sub>
-        </a>
-    </div>
-    <!-- Tommy Phao -->
-    <div style="margin: 10px 25px 75px 25px; width: 130px; height: 130px; white-space: nowrap;" align="center">
-        <a href="https://github.com/xdkaine">
-            <img src="https://github.com/xdkaine.png" width="130" style="border-radius: 50%;" alt=""/>
-            <br />
-            <sub style="font-size: 14px;"><b>Tommy Phao</b></sub>
-        </a>
-    </div>
-    <!-- Jairus Legion -->
-    <div style="margin: 10px 25px 75px 25px; width: 130px; height: 130px; white-space: nowrap;" align="center">
-        <a href="https://github.com/jai-rus">
-            <img src="https://github.com/jai-rus.png" width="130" style="border-radius: 50%;" alt=""/>
-            <br />
-            <sub style="font-size: 14px;"><b>Jairus Legion</b></sub>
-        </a>
-    </div>
-    <!-- Rebecca Smith -->
-    <div style="margin: 10px 25px 75px 25px; width: 130px; height: 130px; white-space: nowrap;" align="center">
-        <a href="https://github.com/Rebeccals">
-            <img src="https://github.com/Rebeccals.png" width="130" style="border-radius: 50%;" alt=""/>
-            <br />
-            <sub style="font-size: 14px;"><b>Rebecca Smith</b></sub>
-        </a>
-    </div>
-    <!-- Rane Dy -->
-    <div style="margin: 10px 25px 75px 25px; width: 130px; height: 130px; white-space: nowrap;" align="center">
-        <a href="https://github.com/rane20">
-            <img src="https://github.com/rane20.png" width="130" style="border-radius: 50%;" alt=""/>
-            <br />
-            <sub style="font-size: 14px;"><b>Rane Dy</b></sub>
-        </a>
-    </div>
-    <!-- Armin Erika Polanco -->
-    <div style="margin: 10px 25px 75px 25px; width: 130px; height: 130px; white-space: nowrap;" align="center">
-        <a href="https://github.com/arminerika">
-            <img src="https://github.com/arminerika.png" width="130" style="border-radius: 50%;" alt=""/>
-            <br />
-            <sub style="font-size: 14px;"><b>Armin Erika Polanco</b></sub>
-        </a>
-    </div>
-    <!-- Maddie Isaacs -->
-    <div style="margin: 10px 25px 75px 25px; width: 130px; height: 130px; white-space: nowrap;" align="center">
-        <a href="https://github.com/mmisaacs">
-            <img src="https://github.com/mmisaacs.png" width="130" style="border-radius: 50%;" alt=""/>
-            <br />
-            <sub style="font-size: 14px;"><b>Maddie Isaacs</b></sub>
-        </a>
-    </div>
-</div>
+|       |       |       |       |
+| :---: | :---: | :---: | :---: |
+| <img width="50" src="https://github.com/Sol-Gerardo.png"/></br>[Jerry Solis](https://github.com/Sol-Gerardo) | <img width="50" src="https://github.com/xdkaine.png"/></br>[Tommy Phao](https://github.com/xdkaine) | <img width="50" src="https://github.com/jai-rus.png"/></br>[Jairus Legion](https://github.com/jai-rus) | <img width="50" src="https://github.com/Rebeccals.png"/></br>[Rebecca Smith](https://github.com/Rebeccals) |
+| <img width="50" src="https://github.com/rane20.png"/></br>[Rane Dy](https://github.com/rane20) | <img width="50" src="https://github.com/arminerika.png"/></br>[Armin Erika Polanco](https://github.com/arminerika) | <img width="50" src="https://github.com/mmisaacs.png"/></br>[Maddie Isaacs](https://github.com/mmisaacs) |
+|       |       |       |       |
