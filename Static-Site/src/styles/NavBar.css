@@ -37,6 +37,15 @@
   }
 
   @media(max-width: 768px) {
+    .BroncoText {
+      margin-right: 20px;
+      font-weight: bold;    
+      font-size: 1.5rem;
+      font-family: 'Verdana', sans-serif; 
+    }
+  }
+
+  @media(max-width: 1500px) {
     .nav-links {
       overflow-x: auto;
       white-space: nowrap;
