@@ -25,6 +25,7 @@
     background-image: url('/src/Assets/Design/racetrack-background.png');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     position: relative; /* Make position relative to maintain flow */
     overflow-x: hidden; /* Hide horizontal overflow */
     padding-top: 20px;
@@ -35,9 +36,9 @@
     display: flex;
     flex-direction: column;
     align-items: center; /* Center items horizontally */
-    background-image: url('/src/Assets/Design/racetrack-background.png');
+    /* background-image: url('/src/Assets/Design/racetrack-background.png');
     background-size: cover;
-    background-position: center;
+    background-position: center; */
     width: 100%;
     height: 100%;
 }
