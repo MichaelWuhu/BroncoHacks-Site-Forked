@@ -1,4 +1,4 @@
-# Static Site
+# Bronco Hacks Website
 
 ## This project is currently in development. It will be used to in Fall 2024 to display info about an upcoming hackathon + info about previous hackathons.
 
