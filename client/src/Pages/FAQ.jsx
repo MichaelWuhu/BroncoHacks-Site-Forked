@@ -1,7 +1,6 @@
 
 import React from 'react';
 import '../styles/FAQ.css';
-// import '../styles/FAQuestions.css'
 import FAQBoxes from '../Components/FAQBoxes';
 import faqs from '../Assets/FAQ/FAQdata';
 

@@ -1,11 +1,14 @@
 
 import React from 'react';
-// import '../styles/Apply.css';
+import '../styles/Apply.css';
+import Login from '../Components/Login.jsx';
 
 function Apply() {
     return (
-      <div className="temp">
-        temp
+      <div className="apply-container">
+        <div className='apply-background'>
+            <Login />
+        </div>
         {/* <div className="faq-background">
           <div className="title-container">
             <h1 className="faq-title">FAQ</h1>
