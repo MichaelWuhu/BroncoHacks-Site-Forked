@@ -1,11 +1,14 @@
 
 import React from 'react';
-// import '../styles/Apply.css';
+import "../styles/LoginSignup.css";
+import LoginBox from '../Components/LoginBox.jsx';
 
-function Apply() {
+function Login() {
     return (
-      <div className="temp">
-        temp
+      <div className="apply-container">
+        <div className='apply-background'>
+            <LoginBox />
+        </div>
         {/* <div className="faq-background">
           <div className="title-container">
             <h1 className="faq-title">FAQ</h1>
@@ -24,4 +27,4 @@ function Apply() {
     );
   }
   
-  export default Apply;
+  export default Login;
