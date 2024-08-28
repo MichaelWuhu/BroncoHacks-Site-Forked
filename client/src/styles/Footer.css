@@ -1,64 +1,91 @@
-*{
-    margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+* {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    color: black;
+  color: black;
 }
 
-footer{
-    /*position: fixed;*/
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.2);
+footer {
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
-.container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-end;
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
 }
-
 
 img {
-    height: 5rem;
+  height: 5rem;
 }
 
-img.broncohackslogo{
-    height:10rem;
+img.broncohackslogo {
+  height: 10rem;
 }
 
-h3{
-    text-align: center;
+h3 {
+  text-align: center;
 }
 
-.footer-content{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
+.footer-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
 }
 
-.footer-content:first-child{
-    margin-right: auto;
+.footer-content:nth-child(1) {
+  margin-right: auto;
 }
 
-.footer-content:nth-child(2){
-    margin: 0 auto 10px;
+.footer-content:nth-child(2) {
+  margin: 0 auto 10px;
 }
 
-.footer-content:nth-child(3){
-    margin-left: auto;
+.footer-content:nth-child(3) {
+  margin-left: auto;
 }
 
 .footer-content ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.footer-content ul li {
+  display: inline-block;
+  margin: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    /* background-color: red; */
+    justify-content: center;
+    align-items: center;
   }
-  
-  .footer-content ul li {
-    display: inline-block;
-    margin: 0.8rem;
+
+  .footer-content:nth-child(1) {
+    margin: 0 0 1rem;
   }
+
+  .footer-content:nth-child(2) {
+    margin: 1rem 0;
+  }
+
+  .footer-content:nth-child(3) {
+    margin: 1rem 0 0;
+  }
+
+  img {
+    height: 4rem;
+  }
+
+  img.broncohackslogo {
+    height: 6.5rem;
+  }
+}
