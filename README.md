@@ -14,7 +14,7 @@
 
 
 
-### **Tech Consultants:**  
+### **Consultants:**  
 |       |       |
 | :---: | :---: |
 | <img width="50" src="https://github.com/acgandhi.png"/></br>[Amar Gandhi](https://github.com/acgandhi) | <img width="50" src="https://github.com/TonyTong112358.png"/></br>[Tony Tong](https://github.com/TonyTong112358) |
