@@ -1,13 +1,13 @@
 
 import React from 'react';
-import '../styles/Apply.css';
-import Login from '../Components/Login.jsx';
+import "../styles/LoginSignup.css";
+import LoginBox from '../Components/LoginBox.jsx';
 
-function Apply() {
+function Login() {
     return (
       <div className="apply-container">
         <div className='apply-background'>
-            <Login />
+            <LoginBox />
         </div>
         {/* <div className="faq-background">
           <div className="title-container">
@@ -27,4 +27,4 @@ function Apply() {
     );
   }
   
-  export default Apply;
+  export default Login;

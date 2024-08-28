@@ -8,7 +8,8 @@ import Sponsors from './Pages/Sponsors'
 import AboutUs from './Pages/About.jsx'
 import Footer from './Components/Footer.jsx'
 import Error from './Pages/Error.jsx'
-import Apply from './Pages/Apply.jsx'
+import Login from './Pages/Login.jsx'
+import Signup from './Pages/Signup.jsx'
 import "./styles/Profile.css"; /* temporary just so it visually looks fine */
 
 
@@ -22,7 +23,8 @@ function App() {
           <Route path="/FAQ" element={<FAQ/>}/>
           <Route path="/MeetTheTeam" element={<MeetTheTeam/>}/>
           <Route path="/Sponsors" element={<Sponsors/>}/>
-          <Route path="/Apply" element={<Apply/>}/>
+          <Route path="/Login" element={<Login/>}/>
+          <Route path="/Signup" element={<Signup/>}/>
           <Route path="/Error" element={<Error/>}/>
       </Routes>
       <div className="foot">

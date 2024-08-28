@@ -32,6 +32,7 @@
   /* height: 30rem; */
   height: auto;
   padding: 1rem 0 3rem;
+  margin: 5rem 0;
   border-radius: 12px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
@@ -93,7 +94,7 @@
   background: #97d8c4;
   border-radius: 30px;
   height: 4rem;
-  width: 9rem;
+  width: 10rem;
   border: none;
   transition: 0.3s;
   margin: 0 0 1rem;
@@ -111,5 +112,5 @@
 }
 
 .login-signup-container a {
-    color: #4d1ac6;
+  color: rgb(93, 17, 235);
 }

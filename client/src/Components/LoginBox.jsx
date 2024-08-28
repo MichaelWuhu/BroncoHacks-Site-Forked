@@ -1,11 +1,12 @@
-import React from "react";
-import "../styles/Apply.css";
+import React, { useState } from "react";
+import "../styles/LoginSignup.css";
 
-function Login() {
+function LoginBox() {
+  const [login, setLogin] = useState(true);
 
-    const login_temp = () => {
-        console.log('Login button clicked');
-    }
+  const login_temp = () => {
+    console.log("Login button clicked");
+  };
 
   return (
     <div className="login-container">
@@ -22,7 +23,7 @@ function Login() {
         <button onClick={login_temp}>
           <h1>Login</h1>
         </button>
-        <div>
+        <div className="switch-login-signup">
           Not a user? <a href="/signup">Sign Up</a>
         </div>
       </div>
@@ -30,4 +31,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginBox;
