@@ -33,7 +33,7 @@ const Navbar = () => {
             <h1>FAQ</h1>
           </Link>
         </li>
-        <Link className="apply-button" to="/signup">
+        <Link className="apply-button" to="/login">
           <button>
             <h1>APPLY</h1>
           </button>
