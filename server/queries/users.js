@@ -10,14 +10,9 @@ async function getUser(id) {
   return user;
 }
 
-async function getUserByEmail(email) {
-  const [user] = await pool.query(`SELECT * FROM User WHERE email = ?`, [email]);
-  return user;
-}
-
 async function createAccount(email, password) {
   const [result] = await pool.query(
-    `INSERT INTO User (email, password) VALUES (?, ?)`,
+    `INSERT INTO User (name, email, password) VALUES (?, ?, ?)`,
     [email, password]
   );
   const id = result.insertId;
@@ -33,7 +28,6 @@ async function deleteUser(id) {
 module.exports = {
   getUsers,
   getUser,
-  getUserByEmail,
   createAccount,
   deleteUser,
 };

@@ -7,9 +7,11 @@ const port = 8080;
 app.use(express.json());
 
 const userRoute = require("./routes/users");
+const teamRoute = require("./routes/teams");
 // const exampleRoute = require("./routes/examples");
 
 app.use("/users", userRoute);
+app.use("/teams", teamRoute);
 // app.use("/examples", exampleRoute);
 
 app.get("/", async (req, res) => {
