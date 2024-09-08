@@ -5,7 +5,6 @@ async function getUsers() {
   return users.rows;
 }
 
-// THIS IS POSTGRESQL SYNTAX THAT WORKS (it's a bit different from MySQL)
 async function getUser(id) {
   const result = await pool.query(`SELECT * FROM "User" WHERE userid = $1`, [
     id,
@@ -19,8 +18,17 @@ async function getUserByEmail(email) {
     email,
   ]);
   user = result.rows[0];
-  console.log(user);
   return user;
+}
+
+async function userJoinedTeam(id) {
+  const result = await pool.query(`UPDATE "User" SET "onTeam" = true WHERE userid = $1`, [id]);
+  return getUser(id);
+}
+
+async function userLeftTeam(id) {
+  const result = await pool.query(`UPDATE "User" SET "onTeam" = false WHERE userid = $1`, [id]);
+  return getUser(id);
 }
 
 async function createAccount(name, email, password) {
@@ -41,6 +49,8 @@ module.exports = {
   getUsers,
   getUser,
   getUserByEmail,
+  userJoinedTeam,
+  userLeftTeam,
   createAccount,
   deleteUser,
 };
