@@ -35,10 +35,6 @@ const getUserByID = async (req, res) => {
 }; //end getUserByID
 
 const createUser = async (req, res) => {
-  // TODO: validate (email is in correct format and password fulfills requirements)
-  console.log("req body: ", req.body);
-  // console.log(req)
-  
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).send({
@@ -47,10 +43,7 @@ const createUser = async (req, res) => {
     });
   }
 
-  // const data = matchedData(req);
-  // console.log(data);
   const { name, email, password } = matchedData(req);
-  console.log("name, email, pass after validation: ", name, email, password);
 
   try {
     const newUser = await UserQueries.createAccount(name, email, password);

@@ -28,18 +28,12 @@ async function createAccount(name, email, password) {
     `INSERT INTO "User" (name, email, password) VALUES ($1, $2, $3)`,
     [name, email, password]
   );
-  // const id = result.insertId;
-  // console.log(result)
-  // const id = result.rows[0].userid;
-  // console.log(id)
-  // const row0 = result.rows[0];
-  // console.log(row0);
   return getUserByEmail(email);
 }
 
 async function deleteUser(id) {
   const user = await getUser(id);
-  await pool.query(`DELETE FROM "User" WHERE userid = ?`, [id]);
+  await pool.query(`DELETE FROM "User" WHERE userid = $1`, [id]);
   return user;
 }
 
