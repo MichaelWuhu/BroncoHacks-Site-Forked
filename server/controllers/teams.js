@@ -1,5 +1,6 @@
 const { validationResult, matchedData } = require("express-validator");
 const TeamQueries = require("../queries/teams");
+const { get } = require("../routes/teams");
 
 const getTeams = async (req, res) => {
   try {
@@ -64,7 +65,7 @@ const createTeam = async (req, res) => {
 
   const data = matchedData(req);
   console.log(data);
-  console.log(req)
+  console.log(req);
 
   try {
     const newTeam = await TeamQueries.createTeam(data.teamName, data.userid);
@@ -84,11 +85,12 @@ const changeTeamName = async (req, res) => {
   }
 
   const data = matchedData(req);
+  console.log("data", data);
 
   try {
     const updatedTeam = await TeamQueries.changeTeamName(
       data.teamid,
-      data.newName
+      data.teamName
     );
     res.status(200).send({ status: "success", data: updatedTeam });
   } catch (err) {

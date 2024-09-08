@@ -4,6 +4,7 @@ const TeamController = require("../controllers/teams");
 const {
   teamIdValidator,
   teamCreationValidator,
+  teamNameValidator,
 } = require("../validators/teams");
 
 // GET route to get all teams
@@ -13,13 +14,13 @@ router.get("/", TeamController.getTeams);
 router.get("/:teamid", teamIdValidator, TeamController.getTeamByID);
 
 // GET route to get team members
-router.get("/:teamid/members", teamIdValidator, TeamController.getTeamMembers);
+// router.get("/:teamid/members", teamIdValidator, TeamController.getTeamMembers);
 
 // POST route to create new team
 router.post("/", teamCreationValidator, TeamController.createTeam);
 
 // PUT route to change team name
-router.put("/:teamid/name", teamIdValidator, TeamController.changeTeamName);
+router.put("/:teamid/name", teamIdValidator, teamNameValidator, TeamController.changeTeamName);
 
 // PUT route to add a member to a team
 router.put("/:teamid/members", teamIdValidator, TeamController.addToTeam);

@@ -4,28 +4,29 @@ const TeamQueries = require("../queries/teams");
 const teamIdValidator = [
   param("teamid")
     .notEmpty()
-    .withMessage("User ID cannot be empty")
+    .withMessage("Team ID cannot be empty")
     .isInt() // might need to change if we end up using UUIDs there is a .isUUID() method
-    .withMessage("User ID must be an integer"),
+    .withMessage("Team ID must be an integer"),
 ];
 
 const teamCreationValidator = [
   // Validate teamName
   body("teamName").notEmpty().withMessage("Team name cannot be empty"),
-  // Validate owner
-  body("teamOwner").notEmpty().withMessage("team owner cannot be empty"),
-  body("members")
+  // Validate creator
+  body("userid")
     .notEmpty()
-    .withMessage("members cannot be empty")
-    .custom(async (teamid) => {
-      const exists = await TeamQueries.getTeamMembers(teamid);
-      if (exists.length >= 5) {
-        throw new Error("Max amount of team members reached");
-      }
-    }),
+    .withMessage("User ID cannot be empty")
+    .isInt()
+    .withMessage("User ID must be an integer")
+    // TODO: figure out a way to check that user is not in multiple teams
+];
+
+const teamNameValidator = [
+  body("teamName").notEmpty().withMessage("Team name cannot be empty"),
 ];
 
 module.exports = {
   teamIdValidator,
   teamCreationValidator,
+  teamNameValidator,
 };
