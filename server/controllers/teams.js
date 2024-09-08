@@ -127,7 +127,6 @@ const deleteTeam = async (req, res) => {
   }
 
   const data = matchedData(req);
-  console.log(data);
 
   try {
     const deletedTeam = await TeamQueries.deleteTeam(data.teamid);
