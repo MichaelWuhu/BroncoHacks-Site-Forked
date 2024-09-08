@@ -21,6 +21,16 @@ async function getUserByEmail(email) {
   return user;
 }
 
+async function userJoinedTeam(id) {
+  const result = await pool.query(`UPDATE "User" SET "onTeam" = true WHERE userid = $1`, [id]);
+  return getUser(id);
+}
+
+async function userLeftTeam(id) {
+  const result = await pool.query(`UPDATE "User" SET "onTeam" = false WHERE userid = $1`, [id]);
+  return getUser(id);
+}
+
 async function createAccount(name, email, password) {
   const result = await pool.query(
     `INSERT INTO "User" (name, email, password) VALUES ($1, $2, $3)`,
@@ -39,6 +49,8 @@ module.exports = {
   getUsers,
   getUser,
   getUserByEmail,
+  userJoinedTeam,
+  userLeftTeam,
   createAccount,
   deleteUser,
 };

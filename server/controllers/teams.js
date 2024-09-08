@@ -64,8 +64,6 @@ const createTeam = async (req, res) => {
   }
 
   const data = matchedData(req);
-  console.log(data);
-  console.log(req);
 
   try {
     const newTeam = await TeamQueries.createTeam(data.teamName, data.userid);
@@ -85,7 +83,6 @@ const changeTeamName = async (req, res) => {
   }
 
   const data = matchedData(req);
-  console.log("data", data);
 
   try {
     const updatedTeam = await TeamQueries.changeTeamName(
@@ -117,6 +114,7 @@ const addToTeam = async (req, res) => {
   }
 };
 
+// TODO: when removed from team, check to see if team has any members, if not delete team
 const removeFromTeam = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {

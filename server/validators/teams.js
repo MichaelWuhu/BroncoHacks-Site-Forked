@@ -24,8 +24,13 @@ const teamCreationValidator = [
       if (!exists) {
         throw new Error("User does not exist");
       }
+    })
+    .custom(async (userid) => {
+      const user = await UserQueries.getUser(userid);
+      if (user.onTeam) {
+        throw new Error("User is already in a team");
+      }
     }),
-  // TODO: figure out a way to check that user is not in multiple teams
 ];
 
 const teamNameValidator = [

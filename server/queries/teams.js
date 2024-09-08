@@ -1,5 +1,5 @@
 const pool = require("../database");
-const { get } = require("../routes/teams");
+const UserQueries = require("./users");
 
 async function getTeams() {
   const users = await pool.query('SELECT * FROM "Team"');
@@ -33,10 +33,11 @@ async function getTeamByName(teamName) {
 
 async function createTeam(teamName, userid) {
   const members = [userid];
-  const result = await pool.query(
+  await pool.query(
     `INSERT INTO "Team" ("teamName", "teamOwner", "members") VALUES ($1, $2, $3)`,
     [teamName, userid, members]
   );
+  await UserQueries.userJoinedTeam(userid);
   return getTeamByName(teamName);
 }
 
@@ -56,6 +57,7 @@ async function addToTeam(teamid, userid) {
     members,
     teamid,
   ]);
+  await UserQueries.userJoinedTeam(userid);
   return getTeam(teamid);
 }
 
@@ -70,6 +72,7 @@ async function removeFromTeam(teamid, userid) {
     members,
     teamid,
   ]);
+  await UserQueries.userLeftTeam(userid);
   return getTeam(teamid);
 }
 

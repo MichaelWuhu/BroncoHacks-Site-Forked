@@ -15,9 +15,6 @@ router.get("/", TeamController.getTeams);
 // GET route to get team by id
 router.get("/:teamid", teamIdValidator, TeamController.getTeamByID);
 
-// GET route to get team members
-// router.get("/:teamid/members", teamIdValidator, TeamController.getTeamMembers);
-
 // POST route to create new team
 router.post("/", teamCreationValidator, TeamController.createTeam);
 
