@@ -117,6 +117,25 @@ const addToTeam = async (req, res) => {
   }
 };
 
+const removeFromTeam = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).send({
+      status: "fail",
+      errors: errors.array(),
+    });
+  }
+
+  const data = matchedData(req);
+
+  try {
+    const updatedTeam = await TeamQueries.removeFromTeam(data.teamid, data.userid);
+    res.status(200).send({ status: "success", data: updatedTeam });
+  } catch (err) {
+    res.status(500).send({ status: "error", message: err.message });
+  }
+};
+
 const deleteTeam = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -143,5 +162,6 @@ module.exports = {
   createTeam,
   changeTeamName,
   addToTeam,
+  removeFromTeam,
   deleteTeam,
 };

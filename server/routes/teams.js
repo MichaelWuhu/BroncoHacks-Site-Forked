@@ -25,7 +25,10 @@ router.post("/", teamCreationValidator, TeamController.createTeam);
 router.put("/:teamid/name", teamIdValidator, teamNameValidator, TeamController.changeTeamName);
 
 // PUT route to add a member to a team
-router.put("/:teamid/:userid", teamAddMemberValidator, TeamController.addToTeam);
+router.put("/:teamid/:userid/add", teamAddMemberValidator, TeamController.addToTeam);
+
+// PUT route to remove a member from a team
+router.put("/:teamid/:userid/remove", teamIdValidator, userIdValidator, TeamController.removeFromTeam);
 
 // DELETE route to delete a team
 router.delete("/:teamid", teamIdValidator, TeamController.deleteTeam);

@@ -19,7 +19,7 @@ async function getTeamMembers(id) {
     `SELECT members FROM "Team" WHERE teamid = $1`,
     [id]
   );
-  members = result.rows[0].members;
+  members = result.rows[0].members || [];
   return members;
 }
 
@@ -59,6 +59,20 @@ async function addToTeam(teamid, userid) {
   return getTeam(teamid);
 }
 
+async function removeFromTeam(teamid, userid) {
+  const members = await getTeamMembers(teamid);
+  const index = members.indexOf(Number(userid)); 
+  if (index > -1) {
+    members.splice(index, 1);
+  }
+  
+  await pool.query(`UPDATE "Team" SET members = $1 WHERE teamid = $2`, [
+    members,
+    teamid,
+  ]);
+  return getTeam(teamid);
+}
+
 async function deleteTeam(id) {
   const team = await getTeam(id);
   await pool.query(`DELETE FROM "Team" WHERE teamid = $1`, [id]);
@@ -73,5 +87,6 @@ module.exports = {
   createTeam,
   changeTeamName,
   addToTeam,
+  removeFromTeam,
   deleteTeam,
 };
