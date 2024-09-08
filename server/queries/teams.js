@@ -52,11 +52,10 @@ async function addToTeam(teamid, userid) {
   const members = await getTeamMembers(teamid);
   members.push(userid);
 
-  await pool.query(`UPDATE "Team" SET members = ? WHERE teamid = ?`, [
+  await pool.query(`UPDATE "Team" SET members = $1 WHERE teamid = $2`, [
     members,
     teamid,
   ]);
-
   return getTeam(teamid);
 }
 

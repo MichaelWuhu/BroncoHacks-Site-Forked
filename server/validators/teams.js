@@ -1,5 +1,6 @@
 const { param, body } = require("express-validator");
 const TeamQueries = require("../queries/teams");
+const UserQueries = require("../queries/users");
 
 const teamIdValidator = [
   param("teamid")
@@ -18,15 +19,47 @@ const teamCreationValidator = [
     .withMessage("User ID cannot be empty")
     .isInt()
     .withMessage("User ID must be an integer")
-    // TODO: figure out a way to check that user is not in multiple teams
+    .custom(async (userid) => {
+      const exists = await UserQueries.getUser(userid);
+      if (!exists) {
+        throw new Error("User does not exist");
+      }
+    }),
+  // TODO: figure out a way to check that user is not in multiple teams
 ];
 
 const teamNameValidator = [
   body("teamName").notEmpty().withMessage("Team name cannot be empty"),
 ];
 
+const teamAddMemberValidator = [
+  param("teamid")
+    .notEmpty()
+    .withMessage("Team ID cannot be empty")
+    .isInt()
+    .withMessage("Team ID must be an integer")
+    .custom(async (teamid) => {
+      const members = await TeamQueries.getTeamMembers(teamid);
+      if (members.length >= 5) {
+        throw new Error("Max Team Size Reached");
+      }
+    }),
+  param("userid")
+    .notEmpty()
+    .withMessage("User ID cannot be empty")
+    .isInt()
+    .withMessage("User ID must be an integer")
+    .custom(async (userid) => {
+      const exists = await UserQueries.getUser(userid);
+      if (!exists) {
+        throw new Error("User does not exist");
+      }
+    }),
+];
+
 module.exports = {
   teamIdValidator,
   teamCreationValidator,
   teamNameValidator,
+  teamAddMemberValidator,
 };

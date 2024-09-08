@@ -5,7 +5,9 @@ const {
   teamIdValidator,
   teamCreationValidator,
   teamNameValidator,
+  teamAddMemberValidator,
 } = require("../validators/teams");
+const { userIdValidator } = require("../validators/users");
 
 // GET route to get all teams
 router.get("/", TeamController.getTeams);
@@ -23,7 +25,7 @@ router.post("/", teamCreationValidator, TeamController.createTeam);
 router.put("/:teamid/name", teamIdValidator, teamNameValidator, TeamController.changeTeamName);
 
 // PUT route to add a member to a team
-router.put("/:teamid/members", teamIdValidator, TeamController.addToTeam);
+router.put("/:teamid/:userid", teamAddMemberValidator, TeamController.addToTeam);
 
 // DELETE route to delete a team
 router.delete("/:teamid", teamIdValidator, TeamController.deleteTeam);
