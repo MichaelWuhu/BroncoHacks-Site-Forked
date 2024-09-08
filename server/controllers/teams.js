@@ -127,9 +127,10 @@ const deleteTeam = async (req, res) => {
   }
 
   const data = matchedData(req);
+  console.log(data);
 
   try {
-    const deletedTeam = await TeamQueries.deleteTeam(data.userid);
+    const deletedTeam = await TeamQueries.deleteTeam(data.teamid);
     res.status(200).send({ status: "success", data: deletedTeam });
   } catch (err) {
     res.status(500).send({ status: "error", message: err.message });

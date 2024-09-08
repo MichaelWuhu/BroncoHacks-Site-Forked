@@ -61,7 +61,7 @@ async function addToTeam(teamid, userid) {
 
 async function deleteTeam(id) {
   const team = await getTeam(id);
-  await pool.query(`DELETE FROM "Team" WHERE teamid = ?`, [id]);
+  await pool.query(`DELETE FROM "Team" WHERE teamid = $1`, [id]);
   return team;
 }
 
