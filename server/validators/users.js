@@ -1,15 +1,17 @@
 const { param, body } = require("express-validator");
-const UserModel = require('../queries/users')
+const UserQueries = require("../queries/users");
 
 const userIdValidator = [
   param("userid")
-  .notEmpty()
-  .withMessage("User ID cannot be empty")
-  .isInt() // might need to change if we end up using UUIDs there is a .isUUID() method 
-  .withMessage("User ID must be an integer") 
-]
+    .notEmpty()
+    .withMessage("User ID cannot be empty")
+    .isInt() // might need to change if we end up using UUIDs there is a .isUUID() method
+    .withMessage("User ID must be an integer"),
+];
 
 const accountCreationValidator = [
+  // Validate ma,e
+  body("name").notEmpty().withMessage("Name cannot be empty"),
   // Validate email
   body("email")
     .notEmpty()
@@ -17,9 +19,9 @@ const accountCreationValidator = [
     .isEmail()
     .withMessage("Invalid email format")
     .custom(async (email) => {
-      const exists = await UserModel.getUserByEmail(email)
-      if (exists.length > 0) {
-        throw new Error('Email already in use');
+      const exists = await UserQueries.getUserByEmail(email);
+      if (exists) {
+        throw new Error("Email already in use");
       }
     }),
   // Validate password
