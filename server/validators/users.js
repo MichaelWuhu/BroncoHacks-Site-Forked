@@ -10,7 +10,7 @@ const userIdValidator = [
 ];
 
 const accountCreationValidator = [
-  // Validate ma,e
+  // Validate name
   body("name").notEmpty().withMessage("Name cannot be empty"),
   // Validate email
   body("email")

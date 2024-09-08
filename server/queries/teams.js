@@ -6,18 +6,22 @@ async function getTeams() {
 }
 
 async function getTeam(id) {
-  const [team] = await pool.query(`SELECT * FROM "Team" WHERE teamid = ?`, [
+  const result = await pool.query(`SELECT * FROM "Team" WHERE teamid = $1`, [
     id,
   ]);
+  team = result.rows[0];
   return team;
 }
 
 async function getTeamMembers(id) {
-  const [team] = await pool.query(
-    `SELECT members FROM "Team" WHERE teamid = ?`,
+  const result = await pool.query(
+    `SELECT members FROM "Team" WHERE teamid = $1`,
     [id]
   );
-  return team;
+  console.log(result);
+  // members = result.rows[0].members;
+  // return members;
+  return result
 }
 
 async function createTeam(teamName, userid) {

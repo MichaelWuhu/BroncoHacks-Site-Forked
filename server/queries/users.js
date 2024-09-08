@@ -18,7 +18,6 @@ async function getUserByEmail(email) {
     email,
   ]);
   user = result.rows[0];
-  console.log(user);
   return user;
 }
 

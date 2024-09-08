@@ -53,26 +53,6 @@ const getTeamMembers = async (req, res) => {
   }
 };
 
-// const createTeam = async (req, res) => {
-//   const errors = validationResult(req);
-//   if (!errors.isEmpty()) {
-//     return res.status(400).send({
-//       status: "fail",
-//       errors: errors.array(),
-//     });
-//   }
-
-//   const data = matchedData(req);
-
-//   try {
-//     const newTeam = await TeamQueries.createTeam(data.teamName, data.userid);
-//     res.status(200).send({ status: "success", data: newTeam });
-//   } catch (err) {
-//     res.status(500).send({ status: "error", message: err.message });
-//   }
-// };
-
-
 const createTeam = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
