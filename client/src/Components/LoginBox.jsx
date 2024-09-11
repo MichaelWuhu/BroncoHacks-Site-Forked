@@ -3,20 +3,18 @@ import axios from "axios";
 import "../styles/LoginSignup.css";
 
 function LoginBox() {
-  
-  // TODO: figure out how to keep track of the user's login state throughout entire portal 
-  
+  // TODO: figure out how to keep track of the user's login state throughout entire portal
+
   async function handleSubmit(event) {
     event.preventDefault();
-    
+
     // TODO: comment out
     console.log("Login form submitted");
     console.log(event.target.email.value);
     console.log(event.target.password.value);
 
-    const path =
-      "http://localhost:8080/users/email/" + event.target.email.value;
-    console.log(path);
+    const ENDPOINT = "http://localhost:8080"
+    const path = ENDPOINT + "/users/email/" + event.target.email.value;
 
     try {
       const response = await axios.get(path);
