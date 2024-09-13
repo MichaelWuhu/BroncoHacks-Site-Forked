@@ -19,7 +19,7 @@ function LoginBox() {
   useEffect(() => {
     console.log("is authenticated", isAuthenticated);
     if (isAuthenticated) {
-      window.location.href = "/team";
+      window.location.href = "/profile";
     }
   }, [isAuthenticated]);
 
@@ -62,18 +62,11 @@ function LoginBox() {
       console.log("is authenticated", isAuthenticated);
       console.log("Login successful");
 
-      window.location.href = "/team";
+      window.location.href = "/login";
 
     } catch (err) {
       console.error("Error fetching user:", err.message);
     }
-
-    // if(isAuthenticated){
-    //   // window.location.href = "/team";
-    //   console.log("authenticated", isAuthenticated);
-    // } else {
-    //   console.log("not authenticated", isAuthenticated);
-    // }
   };
 
   return (
