@@ -28,7 +28,7 @@ const login = async (req, res) => {
   }
 
   const jwtToken = jwt.sign(
-    { id: userWithEmail, email: userWithEmail.email },
+    { id: userWithEmail, email: userWithEmail.email, exp: Math.floor(Date.now() / 1000) + 60 * 60 },
     process.env.JWT_ACCESS_SECRET
   );
 

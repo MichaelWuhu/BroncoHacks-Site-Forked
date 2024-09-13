@@ -1,57 +1,66 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../styles/LoginSignup.css";
-import {useSignIn} from "react-auth-kit";
+import useSignIn from "react-auth-kit/hooks/useSignIn";
+import { Icon } from "react-icons-kit";
+import { eyeOff } from "react-icons-kit/feather/eyeOff";
+import { eye } from "react-icons-kit/feather/eye";
+
+import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 
 function LoginBox() {
   // TODO: figure out how to keep track of the user's login state throughout entire portal
-  // const signIn = useSignIn();
+  const [password, setPassword] = useState("");
+  const [type, setType] = useState("password");
+  const [icon, setIcon] = useState(eyeOff);
 
-  async function handleSubmit(event) {
+  const signIn = useSignIn();
+  const isAuthenticated = useIsAuthenticated();
+
+  const handleToggle = () => {
+    if (type === "password") {
+      setIcon(eye);
+      setType("text");
+    } else {
+      setIcon(eyeOff);
+      setType("password");
+    }
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("Login form submitted");
-  }
+    console.log(
+      "Values: ",
+      event.target.email.value,
+      event.target.password.value
+    );
 
-  // async function ohandleSubmit(event) {
-  //   event.preventDefault();
+    const ENDPOINT = "http://localhost:8080";
 
-  //   // TODO: comment out
-  //   // console.log("Login form submitted");
-  //   // console.log(event.target.email.value);
-  //   // console.log(event.target.password.value);
+    try {
+      const res = await axios.post(ENDPOINT + "/auth/login", {
+        email: event.target.email.value,
+        password: event.target.password.value,
+      });
+      console.log("Response: ", res);
 
-  //   const ENDPOINT = "http://localhost:8080"
+      console.log("Token: ", res.data.token);
 
-  //   // const path = ENDPOINT + "/users/email/" + event.target.email.value;
-  //   // const path = ENDPOINT + "/auth/login"
+      const signedIn = signIn({
+        auth: { token: res.data.token, type: "Bearer" },
+        // refresh: res.data.refreshToken,
+        userState: { email: event.target.email.value },
+      });
 
-  //   try {
-  //     // const response = await axios.post(path, event)  
-  //     // const user = response.data;
-  //     // console.log("user", user);
-      
-  //     // signIn({token: response.data.token,
-  //       // expiresIn: 3600,
-  //       // tokenType: "Bearer",
-  //       // authState: {email: event.email}
-  //     // })
+      console.log("signedIN", signedIn);
+      console.log("is authenticated", isAuthenticated);
 
-      
-  //     // if (user.password === event.target.password.value) {
-  //       // console.log("Login successful");
-  //       // TODO: rediredct to user's profile page
-  //       // window.location.href = "/";
-  //       // Redirect to the user's profile page
-  //     // } else {
-  //       // console.log("Login failed");
-  //       // event.target.password.value = "";
-  //       // Display an error message
-  //     // }
-
-  //   } catch (err) {
-  //     console.error("Error fetching user:", err.message);
-  //   }
-  // }
+      // window.location.href = "/team";
+      console.log("Login successful");
+    } catch (err) {
+      console.error("Error fetching user:", err.message);
+    }
+  };
 
   return (
     <div className="login-container">
@@ -63,7 +72,17 @@ function LoginBox() {
         </div>
         <div className="input-field">
           <h3>Password</h3>
-          <input type="password" name="password" />
+
+          <input
+            type={type}
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            autoComplete="current-password"
+          />
+          <span className="toggle-pass-view" onClick={handleToggle}>
+            <Icon icon={icon} size={25} />
+          </span>
         </div>
         <div className="login-signup-container">
           <button type="submit">
