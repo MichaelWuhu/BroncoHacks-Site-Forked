@@ -10,10 +10,12 @@ import Footer from "./Components/Footer.jsx";
 import Error from "./Pages/Error.jsx";
 import Login from "./Pages/Login.jsx";
 import Signup from "./Pages/Signup.jsx";
-import Team from "./Pages/Team.jsx";
+import Profile from "./Pages/Profile.jsx";
 import "./styles/Profile.css"; /* temporary just so it visually looks fine */
+import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 
 function App() {
+  const isAuthenticated = useIsAuthenticated();
   return (
     <>
       <NavBar className="navbar" />
@@ -25,7 +27,7 @@ function App() {
         <Route path="/Sponsors" element={<Sponsors />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Signup" element={<Signup />} />
-        <Route path="/Team" element={<Team />} />
+        <Route path="/Profile" element={<Profile />} />
         <Route path="/Error" element={<Error />} />
       </Routes>
       <div className="foot">

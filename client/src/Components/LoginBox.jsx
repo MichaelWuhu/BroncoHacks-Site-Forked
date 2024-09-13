@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/LoginSignup.css";
 import useSignIn from "react-auth-kit/hooks/useSignIn";
@@ -9,13 +9,19 @@ import { eye } from "react-icons-kit/feather/eye";
 import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 
 function LoginBox() {
-  
   const [password, setPassword] = useState("");
   const [type, setType] = useState("password");
   const [icon, setIcon] = useState(eyeOff);
 
   const signIn = useSignIn();
   const isAuthenticated = useIsAuthenticated();
+
+  useEffect(() => {
+    console.log("is authenticated", isAuthenticated);
+    if (isAuthenticated) {
+      window.location.href = "/team";
+    }
+  }, [isAuthenticated]);
 
   const handleToggle = () => {
     if (type === "password") {
@@ -54,8 +60,10 @@ function LoginBox() {
 
       console.log("signedIN", signedIn);
       console.log("is authenticated", isAuthenticated);
-
       console.log("Login successful");
+
+      window.location.href = "/team";
+
     } catch (err) {
       console.error("Error fetching user:", err.message);
     }
