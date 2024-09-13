@@ -9,7 +9,7 @@ import { eye } from "react-icons-kit/feather/eye";
 import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 
 function LoginBox() {
-  // TODO: figure out how to keep track of the user's login state throughout entire portal
+  
   const [password, setPassword] = useState("");
   const [type, setType] = useState("password");
   const [icon, setIcon] = useState(eyeOff);
@@ -55,11 +55,17 @@ function LoginBox() {
       console.log("signedIN", signedIn);
       console.log("is authenticated", isAuthenticated);
 
-      // window.location.href = "/team";
       console.log("Login successful");
     } catch (err) {
       console.error("Error fetching user:", err.message);
     }
+
+    // if(isAuthenticated){
+    //   // window.location.href = "/team";
+    //   console.log("authenticated", isAuthenticated);
+    // } else {
+    //   console.log("not authenticated", isAuthenticated);
+    // }
   };
 
   return (
