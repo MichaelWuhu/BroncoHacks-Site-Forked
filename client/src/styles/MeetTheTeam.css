@@ -1,76 +1,77 @@
 /* MeetTheTeam.css */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.meet-the-team-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 71vh;
+  /* background-image: url("../Assets/Backgrounds/About-background.png"); */
+  background: rgb(186, 215, 240);
 }
 
 .meet-the-team {
-    display: flex;
-    flex-direction: row;  ;
-    align-items: center;
-    text-align: center;
-    margin-top: 5vh;
-    margin-right: 10%;
-    margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 5%;
+  margin-top: 5vh;
 }
 
-.profilegrid{
-    display: flex;
-    flex-direction: row;
-    width: auto;
-    flex-wrap: nowrap;
+.meet-the-team h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
-.team-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
-    max-width: 1000px;
+.meet-the-team button {
+  margin: 0 0.5rem;
+  background-color: rgb(44, 119, 44);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 0.075em;
+  border-radius: 25px;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  transition: 0.3s;
 }
 
-.profile-wrapper {
-    margin: 10px;
-    margin-bottom: 60px;
+.meet-the-team button:hover {
+    background: #80d189;
+    color: #444444;
+    transition: 0.3s;
 }
 
-.profile-bubble {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+.profilegrid {
+  display: grid;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(5, 1fr);
 }
 
-.profile-bubble img {
-    border-radius: 50%;
-    object-fit: cover;
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  margin-bottom: 60px;
 }
 
-.profile-bubble .linkedinpicture {
-    position: absolute;
-    bottom: -10px; 
-    left: 70%; 
-    width: 45px; 
-    height: 45px; 
-}
-
-.profile-bubble .profilebody {
-    margin-top: 5px;
-    align-items: center;
-    text-align: center;
-}
-
-.profile-bubble .profilebody name {
-    font-size: 1.25rem;
-}
-
-@media (min-width: 600px) {
-    .profilegrid{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: auto;
-        flex-wrap: nowrap;  
-    }
+@media (max-width: 1200px) {
+  .profilegrid {
+    grid-template-columns: repeat(4, 1fr);
   }
+}
+
+@media (max-width: 768px) {
+  .profilegrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .profilegrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

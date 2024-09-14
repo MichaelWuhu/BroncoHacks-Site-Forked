@@ -11,7 +11,7 @@ import Error from "./Pages/Error.jsx";
 import Login from "./Pages/Login.jsx";
 import Signup from "./Pages/Signup.jsx";
 import Profile from "./Pages/Profile.jsx";
-import "./styles/Profile.css"; /* temporary just so it visually looks fine */
+// import "./styles/Profile.css";
 import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 
 function App() {
