@@ -9,7 +9,6 @@ function SignupBox() {
   const [type, setType] = useState("password");
   const [icon, setIcon] = useState(eyeOff);
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleToggle = () => {
     if (type === "password") {
@@ -43,8 +42,7 @@ function SignupBox() {
         });
         console.log("successful response", user);
         event.target.reset();
-        window.location.href = "/login"; // => maybe redirect to authentication page?
-        // send email to user or something (idk how to do that)
+        window.location.href = "/login"; // => maybe send email to user or something (idk how to do that)
       } catch (err) {
         console.error("Error creating user:", err.message);
         event.target.password.value = "";
