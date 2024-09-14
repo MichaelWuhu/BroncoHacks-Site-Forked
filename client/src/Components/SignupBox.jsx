@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "../styles/LoginSignup.css";
+import { Icon } from "react-icons-kit";
+import { eyeOff } from "react-icons-kit/feather/eyeOff";
+import { eye } from "react-icons-kit/feather/eye";
 
 function SignupBox() {
+  const [type, setType] = useState("password");
+  const [icon, setIcon] = useState(eyeOff);
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleToggle = () => {
+    if (type === "password") {
+      setIcon(eye);
+      setType("text");
+    } else {
+      setIcon(eyeOff);
+      setType("password");
+    }
+  };
+
   async function handleSubmit(event) {
     event.preventDefault();
 
@@ -26,7 +44,7 @@ function SignupBox() {
         console.log("successful response", user);
         event.target.reset();
         window.location.href = "/login"; // => maybe redirect to authentication page?
-                                         // send email to user or something (idk how to do that)
+        // send email to user or something (idk how to do that)
       } catch (err) {
         console.error("Error creating user:", err.message);
         event.target.password.value = "";
@@ -53,7 +71,16 @@ function SignupBox() {
         </div>
         <div className="input-field">
           <h3>Password</h3>
-          <input type="password" name="password" />
+          <input
+            type={type}
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            autoComplete="current-password"
+          />
+          <span className="toggle-pass-view" onClick={handleToggle}>
+            <Icon icon={icon} size={25} />
+          </span>
         </div>
         <div className="input-field">
           <h3>Confirm Password</h3>

@@ -10,6 +10,7 @@ import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 
 function LoginBox() {
   const [password, setPassword] = useState("");
+  
   const [type, setType] = useState("password");
   const [icon, setIcon] = useState(eyeOff);
 
