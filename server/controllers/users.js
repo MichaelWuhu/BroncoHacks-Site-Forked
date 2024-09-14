@@ -1,5 +1,6 @@
 const { validationResult, matchedData } = require("express-validator");
 const UserQueries = require("../queries/users");
+const bcrypt = require("bcrypt");
 
 const getUsers = async (req, res) => {
   try {
@@ -54,9 +55,6 @@ const getUserByEmail = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-    
-  console.log("body", req.body)
-  
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).send({
@@ -68,7 +66,8 @@ const createUser = async (req, res) => {
   const { name, email, password } = matchedData(req);
 
   try {
-    const newUser = await UserQueries.createAccount(name, email, password);
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = await UserQueries.createAccount(name, email, hashedPassword);
     res.status(200).send({ status: "success", data: newUser });
   } catch (err) {
     res.status(500).send({ status: "error", message: err.message });

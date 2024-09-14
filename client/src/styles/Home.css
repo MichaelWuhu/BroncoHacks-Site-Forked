@@ -1,7 +1,7 @@
 /* ---- Main Content ---- */
 .home-featured-container {
     padding: 5em 0 5em 0;
-    background-image:url('../Static-Site/src/Assets/Home/imgs/background.png');
+    background-image:url('../Assets/Home/imgs/Background.png');
     background-repeat:no-repeat;
     background-size:cover;
     background-position:center;
@@ -20,12 +20,15 @@
     width: 31.25rem;
     height: 17.5rem;
     margin: 0 auto;
-}
-
-.slide-wrapper {
     outline: 0.313rem solid #97D8C4;
     border-radius: 0.625rem;
     outline-width: 0.35rem;
+}
+
+.slide-wrapper {
+    /* outline: 0.313rem solid #97D8C4;
+    border-radius: 0.625rem;
+    outline-width: 0.35rem; */
 }
 
 .home-map {

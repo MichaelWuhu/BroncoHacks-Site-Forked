@@ -1,6 +1,7 @@
 const { validationResult, matchedData } = require("express-validator");
 const jwt = require("jsonwebtoken");
 const UserQueries = require("../queries/users");
+const bcrypt = require("bcrypt");
 
 const login = async (req, res) => {
   const { email, password } = req.body;
@@ -9,30 +10,24 @@ const login = async (req, res) => {
 
   try {
     userWithEmail = await UserQueries.getUserByEmail(email);
-    // console.log(userWithEmail);
+    if (await bcrypt.compare(password, userWithEmail.password)) {
+      const jwtToken = jwt.sign(
+        {
+          id: userWithEmail,
+          email: userWithEmail.email,
+          exp: Math.floor(Date.now() / 1000) + 60 * 60,
+        },
+        process.env.JWT_ACCESS_SECRET
+      );
+      return res
+        .status(200)
+        .send({ status: "success", message: "Welcome back!" , token: jwtToken });
+    } else {
+      res.send({ status: "fail", message: "Login failed. Please check your credentials." });
+    }
   } catch (err) {
     return res.status(500).send({ status: "error", message: err.message });
   }
-
-//   console.log("userWithEmail:", userWithEmail);
-
-  if (userWithEmail == null) {
-    return res
-      .status(400)
-      .send({ status: "fail", message: "Email or Pass does not match!" });
-  }
-  if (userWithEmail.password !== password) {
-    return res
-      .status(400)
-      .send({ status: "fail", message: "Email or Pass does not match!" });
-  }
-
-  const jwtToken = jwt.sign(
-    { id: userWithEmail, email: userWithEmail.email, exp: Math.floor(Date.now() / 1000) + 60 * 60 },
-    process.env.JWT_ACCESS_SECRET
-  );
-
-  res.json({ message: "Welcome back!", token: jwtToken });
 };
 
 module.exports = {
