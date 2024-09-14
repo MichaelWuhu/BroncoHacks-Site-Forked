@@ -34,7 +34,29 @@ const getUserByID = async (req, res) => {
   }
 }; //end getUserByID
 
+const getUserByEmail = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).send({
+      status: "fail",
+      errors: errors.array(),
+    });
+  }
+
+  const data = matchedData(req);
+  
+  try {
+    const user = await UserQueries.getUserByEmail(data.email);
+    res.status(200).send(user);
+  } catch (err) {
+    res.status(500).send({ status: "error", message: err.message });
+  }
+};
+
 const createUser = async (req, res) => {
+    
+  console.log("body", req.body)
+  
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).send({
@@ -75,6 +97,7 @@ const deleteUser = async (req, res) => {
 module.exports = {
   getUsers,
   getUserByID,
+  getUserByEmail,
   createUser,
   deleteUser,
 };

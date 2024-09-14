@@ -9,6 +9,14 @@ const userIdValidator = [
     .withMessage("User ID must be an integer"),
 ];
 
+const userEmailValidator = [
+  param("email")
+    .notEmpty()
+    .withMessage("Email cannot be empty")
+    .isEmail()
+    .withMessage("Invalid email format"),
+];
+
 const accountCreationValidator = [
   // Validate name
   body("name").notEmpty().withMessage("Name cannot be empty"),
@@ -40,5 +48,6 @@ const accountCreationValidator = [
 
 module.exports = {
   userIdValidator,
+  userEmailValidator,
   accountCreationValidator,
 };

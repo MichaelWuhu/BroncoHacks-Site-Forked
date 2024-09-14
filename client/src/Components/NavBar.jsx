@@ -3,12 +3,14 @@ import "../styles/NavBar.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import BroncoHacksLogo from "../Assets/Profile/icon/BroncoHacks_Logo.png";
+import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const toggleHamburger = () => {
     setOpen(!open);
   };
+  const isAuthenticated = useIsAuthenticated();
 
   return (
     <div className="navbar">
@@ -33,9 +35,9 @@ const Navbar = () => {
             <h1>FAQ</h1>
           </Link>
         </li>
-        <Link className="apply-button" to="/login">
+        <Link className="apply-button" to={isAuthenticated ? "/profile" : "/login"}>
           <button>
-            <h1>APPLY</h1>
+            { isAuthenticated ? <h1>PROFILE</h1> : <h1>APPLY</h1> }
           </button>
         </Link>
       </ul>
