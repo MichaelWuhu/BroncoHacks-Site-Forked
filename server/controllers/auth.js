@@ -2,6 +2,7 @@ const { validationResult, matchedData } = require("express-validator");
 const jwt = require("jsonwebtoken");
 const UserQueries = require("../queries/users");
 const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt");
 
 const login = async (req, res) => {
   // const { email, password } = req.body;
