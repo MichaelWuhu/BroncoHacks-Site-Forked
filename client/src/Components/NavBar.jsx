@@ -26,8 +26,13 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/MeetTheTeam">
-            <h1>Team</h1>
+          <Link to="/About">
+            <h1>About</h1>
+          </Link>
+        </li>
+        <li>
+          <Link to="/Sponsors">
+            <h1>Sponsors</h1>
           </Link>
         </li>
         <li>
@@ -35,10 +40,11 @@ const Navbar = () => {
             <h1>FAQ</h1>
           </Link>
         </li>
-        <Link className="apply-button" to={isAuthenticated ? "/profile" : "/login"}>
-          <button>
-            { isAuthenticated ? <h1>PROFILE</h1> : <h1>APPLY</h1> }
-          </button>
+        <Link
+          className="apply-button"
+          to={isAuthenticated ? "/profile" : "/login"}
+        >
+          <button>{isAuthenticated ? <h1>PROFILE</h1> : <h1>APPLY</h1>}</button>
         </Link>
       </ul>
 
@@ -68,12 +74,21 @@ const Navbar = () => {
             </Link>
             <Link
               className="navLinks"
-              to="/team"
+              to="/about"
               onClick={() => {
                 setOpen(!open);
               }}
             >
-              <li className="dropdown-item">Team</li>
+              <li className="dropdown-item">About</li>
+            </Link>
+            <Link
+              className="navLinks"
+              to="/sponsors"
+              onClick={() => {
+                setOpen(!open);
+              }}
+            >
+              <li className="dropdown-item">Sponsors</li>
             </Link>
             <Link
               className="navLinks"
@@ -86,12 +101,11 @@ const Navbar = () => {
             </Link>
             <Link
               className="navLinks"
-              to="/signup"
-              onClick={() => {
-                setOpen(!open);
-              }}
+              to={isAuthenticated ? "/profile" : "/login"}
             >
-              <li className="dropdown-item">Apply</li>
+              <li className="dropdown-item">
+                {isAuthenticated ? "Profile" : "Apply"}
+              </li>
             </Link>
           </ul>
         </div>

@@ -6,7 +6,7 @@
     background-image: url('/src/Assets/Design/racetrack-background.png');
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    min-height: 74vh;
 }
 
 
